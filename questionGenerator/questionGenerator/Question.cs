@@ -11,10 +11,10 @@ namespace questionGenerator
     {
         private Random r = new Random();
         public string query;
-        private string rightAnswer { get; }
-        protected string wrongAnswer1 { get; }
-        protected string wrongAnswer2 { get; }
-        protected string wrongAnswer3 { get; }
+        public string rightAnswer { get; private set; }
+        private string wrongAnswer1;
+        private string wrongAnswer2;
+        private string wrongAnswer3;
         public List<string> answers;
         public Question(string query, string rightAnswer, string wrongAnswer1, string wrongAnswer2, string wrongAnswer3)
         {
