@@ -26,18 +26,20 @@ namespace questionGenerator
 
             
             NewQuestions(biologi,"biologi");
+            biologi = ReadQuestions("biologi");
+            NewQuestions(biologi, "biologi");
+
         }
         public static void NewQuestions(List<Question> list2Write,string category)
         {
-            string path = @"C:\quiz\";
-            
+            string path = @"C:\quiz\";            
 
-            if (!File.Exists(path + "biologi" + ".txt"))
+            if (!File.Exists(path + category + ".txt"))
             {
-                TextWriter tw = new StreamWriter(path + "biologi" + ".txt");
+                TextWriter tw = new StreamWriter(path + category + ".txt");
                 for (int i = 0; i < list2Write.Count; i++)
                 {
-                    list2Write[i].ShuffleAnswers();
+
                     tw.WriteLine(list2Write[i].query);
                     tw.WriteLine(list2Write[i].answers[0]);
                     tw.WriteLine(list2Write[i].answers[1]);
@@ -49,7 +51,7 @@ namespace questionGenerator
             }
             else
             {
-                TextWriter tw = new StreamWriter(path + "biologi" + ".txt");
+                TextWriter tw = new StreamWriter(path + category + ".txt");
 
                 for (int i = 0; i < list2Write.Count; i++)
                 {
@@ -64,16 +66,15 @@ namespace questionGenerator
             }
 
         }
-        public static void AddQuestions(List<Question> list2Write)
+        public static void AddQuestions(List<Question> list2Write, string category)
         {
             string path = @"C:\quiz\";
 
-            if (!File.Exists(path + "biologi" + ".txt"))
+            if (!File.Exists(path + category + ".txt"))
             {
-                TextWriter tw = new StreamWriter(path + "biologi" + ".txt");
+                TextWriter tw = new StreamWriter(path + category + ".txt");
                 for (int i = 0; i < list2Write.Count; i++)
                 {
-                    list2Write[i].ShuffleAnswers();
                     tw.WriteLine(list2Write[i].query);
                     tw.WriteLine(list2Write[i].answers[0]);
                     tw.WriteLine(list2Write[i].answers[1]);
@@ -85,7 +86,7 @@ namespace questionGenerator
             }
             else
             {
-                TextWriter tw = new StreamWriter(path + "biologi" + ".txt", true);
+                TextWriter tw = new StreamWriter(path + category + ".txt", true);
 
                 for (int i = 0; i < list2Write.Count; i++)
                 {
@@ -99,6 +100,30 @@ namespace questionGenerator
                 tw.Close();
             }
 
+        }
+        public static List<Question>  ReadQuestions(string category)
+        {
+            List<Question> questions = new List<Question>() ;
+            string path = @"C:\quiz\";
+
+            if (File.Exists(path + category + ".txt"))
+            {
+                TextReader tr = new StreamReader(path + category + ".txt");
+                int i = 0;
+                string line;
+                while ((line=tr.ReadLine())!=null)
+                {
+                    
+                    questions.Add(new Question(line, tr.ReadLine(), tr.ReadLine(), tr.ReadLine(), tr.ReadLine()));
+
+
+                    i++;
+                }
+                
+                tr.Close();
+            }
+
+            return(questions);
         }
     }
 }
