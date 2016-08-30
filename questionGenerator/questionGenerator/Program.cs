@@ -9,6 +9,7 @@ namespace questionGenerator
 {
     class Program
     {
+        public static string path = (Environment.CurrentDirectory + @"\..\..\quizzes\");
         static void Main(string[] args)
         {
            Console.WriteLine(Environment.CurrentDirectory);
@@ -26,15 +27,14 @@ namespace questionGenerator
             biologi.Add(new Question("Vad?4", "1", "2", "3", "4"));
 
             
-            NewQuestions(biologi,"biologi");
+            NewQuestions(biologi, nameof(biologi));
             biologi = ReadQuestions("biologi");
-            NewQuestions(biologi, "biologi");
+            NewQuestions(biologi, nameof(biologi));
 
         }
         public static void NewQuestions(List<Question> list2Write,string category)
         {
-            string path = (Environment.CurrentDirectory + @"\quizzes\");            
-
+           
             if (!File.Exists(path + category + ".txt"))
             {
                 TextWriter tw = new StreamWriter(path + category + ".txt");
@@ -69,7 +69,6 @@ namespace questionGenerator
         }
         public static void AddQuestions(List<Question> list2Write, string category)
         {
-            string path = @"C:\quiz\";
 
             if (!File.Exists(path + category + ".txt"))
             {
@@ -105,7 +104,6 @@ namespace questionGenerator
         public static List<Question>  ReadQuestions(string category)
         {
             List<Question> questions = new List<Question>() ;
-            string path = @"C:\quiz\";
 
             if (File.Exists(path + category + ".txt"))
             {
