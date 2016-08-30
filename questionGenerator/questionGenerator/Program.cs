@@ -11,8 +11,9 @@ namespace questionGenerator
     {
         static void Main(string[] args)
         {
-           
-            
+           Console.WriteLine(Environment.CurrentDirectory);
+            Console.ReadKey();
+
             List<Question> biologi = new List<Question>();
             List<Question> geografi = new List<Question>();
             List<Question> historia = new List<Question>();
@@ -32,7 +33,7 @@ namespace questionGenerator
         }
         public static void NewQuestions(List<Question> list2Write,string category)
         {
-            string path = @"C:\quiz\";            
+            string path = (Environment.CurrentDirectory + @"\quizzes\");            
 
             if (!File.Exists(path + category + ".txt"))
             {
