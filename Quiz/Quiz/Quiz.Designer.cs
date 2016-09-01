@@ -33,7 +33,6 @@
             this.SvarB = new System.Windows.Forms.Button();
             this.SvarC = new System.Windows.Forms.Button();
             this.SvarD = new System.Windows.Forms.Button();
-            this.Avsluta = new System.Windows.Forms.Button();
             this.QuizBox = new System.Windows.Forms.Label();
             this.FrågFält_A = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,16 +42,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.FrågFält_C = new System.Windows.Forms.Label();
             this.FrågFält_D = new System.Windows.Forms.Label();
-            this.Start = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.startaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startaSpelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tillbakaTillMenynToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.avslutaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inställningarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.hjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Nästa = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +79,7 @@
             this.SvarB.TabStop = false;
             this.SvarB.Text = "B";
             this.SvarB.UseVisualStyleBackColor = true;
+            this.SvarB.Click += new System.EventHandler(this.SvarB_Click);
             this.SvarB.MouseEnter += new System.EventHandler(this.SvarA_MouseEnter);
             this.SvarB.MouseLeave += new System.EventHandler(this.SvarA_MouseLeave);
             // 
@@ -93,6 +93,7 @@
             this.SvarC.TabStop = false;
             this.SvarC.Text = "C";
             this.SvarC.UseVisualStyleBackColor = true;
+            this.SvarC.Click += new System.EventHandler(this.SvarC_Click);
             this.SvarC.MouseEnter += new System.EventHandler(this.SvarA_MouseEnter);
             this.SvarC.MouseLeave += new System.EventHandler(this.SvarA_MouseLeave);
             // 
@@ -106,21 +107,9 @@
             this.SvarD.TabStop = false;
             this.SvarD.Text = "D";
             this.SvarD.UseVisualStyleBackColor = true;
+            this.SvarD.Click += new System.EventHandler(this.SvarD_Click);
             this.SvarD.MouseEnter += new System.EventHandler(this.SvarA_MouseEnter);
             this.SvarD.MouseLeave += new System.EventHandler(this.SvarA_MouseLeave);
-            // 
-            // Avsluta
-            // 
-            this.Avsluta.Location = new System.Drawing.Point(700, 420);
-            this.Avsluta.Name = "Avsluta";
-            this.Avsluta.Size = new System.Drawing.Size(80, 40);
-            this.Avsluta.TabIndex = 4;
-            this.Avsluta.TabStop = false;
-            this.Avsluta.Text = "Avsluta";
-            this.Avsluta.UseVisualStyleBackColor = true;
-            this.Avsluta.Click += new System.EventHandler(this.Avsluta_Click);
-            this.Avsluta.MouseEnter += new System.EventHandler(this.Avsluta_MouseEnter);
-            this.Avsluta.MouseLeave += new System.EventHandler(this.Avsluta_MouseLeave);
             // 
             // QuizBox
             // 
@@ -198,24 +187,6 @@
             this.FrågFält_D.TabIndex = 13;
             this.FrågFält_D.Text = "Svarsalternativ D";
             // 
-            // Start
-            // 
-            this.Start.Location = new System.Drawing.Point(700, 40);
-            this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(80, 40);
-            this.Start.TabIndex = 14;
-            this.Start.Text = "Starta";
-            this.Start.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(700, 95);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 42);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Tillbaka";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -238,7 +209,6 @@
             this.startaToolStripMenuItem.Name = "startaToolStripMenuItem";
             this.startaToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
             this.startaToolStripMenuItem.Text = "Start";
-            this.startaToolStripMenuItem.Click += new System.EventHandler(this.startaToolStripMenuItem_Click);
             // 
             // startaSpelToolStripMenuItem
             // 
@@ -259,12 +229,21 @@
             this.avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
             this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.avslutaToolStripMenuItem.Text = "Avsluta";
+            this.avslutaToolStripMenuItem.Click += new System.EventHandler(this.avslutaToolStripMenuItem_Click);
             // 
             // inställningarToolStripMenuItem
             // 
+            this.inställningarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2});
             this.inställningarToolStripMenuItem.Name = "inställningarToolStripMenuItem";
             this.inställningarToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.inställningarToolStripMenuItem.Text = "Inställningar";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(112, 26);
+            this.toolStripMenuItem2.Text = "Ljud";
             // 
             // hjälpToolStripMenuItem
             // 
@@ -278,13 +257,24 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(67, 4);
             // 
+            // Nästa
+            // 
+            this.Nästa.AutoSize = true;
+            this.Nästa.Enabled = false;
+            this.Nästa.Location = new System.Drawing.Point(700, 430);
+            this.Nästa.Name = "Nästa";
+            this.Nästa.Size = new System.Drawing.Size(100, 30);
+            this.Nästa.TabIndex = 17;
+            this.Nästa.Text = "Nästa fråga";
+            this.Nästa.UseVisualStyleBackColor = true;
+            this.Nästa.Click += new System.EventHandler(this.Nästa_Click);
+            // 
             // Quiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 480);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Start);
+            this.Controls.Add(this.Nästa);
             this.Controls.Add(this.FrågFält_D);
             this.Controls.Add(this.FrågFält_C);
             this.Controls.Add(this.label4);
@@ -294,7 +284,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FrågFält_A);
             this.Controls.Add(this.QuizBox);
-            this.Controls.Add(this.Avsluta);
             this.Controls.Add(this.SvarD);
             this.Controls.Add(this.SvarC);
             this.Controls.Add(this.SvarB);
@@ -317,7 +306,6 @@
         private System.Windows.Forms.Button SvarB;
         private System.Windows.Forms.Button SvarC;
         private System.Windows.Forms.Button SvarD;
-        private System.Windows.Forms.Button Avsluta;
         private System.Windows.Forms.Label QuizBox;
         private System.Windows.Forms.Label FrågFält_A;
         private System.Windows.Forms.Label label2;
@@ -327,8 +315,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label FrågFält_C;
         private System.Windows.Forms.Label FrågFält_D;
-        private System.Windows.Forms.Button Start;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem startaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startaSpelToolStripMenuItem;
@@ -337,6 +323,9 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem inställningarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hjälpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ljudToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.Button Nästa;
     }
 }
 

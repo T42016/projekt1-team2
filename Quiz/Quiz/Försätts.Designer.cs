@@ -60,11 +60,11 @@
             // BiologiLink
             // 
             this.BiologiLink.AutoSize = true;
-            this.BiologiLink.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BiologiLink.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BiologiLink.LinkColor = System.Drawing.Color.Black;
             this.BiologiLink.Location = new System.Drawing.Point(40, 100);
             this.BiologiLink.Name = "BiologiLink";
-            this.BiologiLink.Size = new System.Drawing.Size(46, 16);
+            this.BiologiLink.Size = new System.Drawing.Size(70, 22);
             this.BiologiLink.TabIndex = 2;
             this.BiologiLink.TabStop = true;
             this.BiologiLink.Text = "Biologi";
@@ -73,54 +73,54 @@
             // GeografiLink
             // 
             this.GeografiLink.AutoSize = true;
-            this.GeografiLink.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GeografiLink.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GeografiLink.LinkColor = System.Drawing.Color.Black;
             this.GeografiLink.Location = new System.Drawing.Point(40, 150);
             this.GeografiLink.Name = "GeografiLink";
-            this.GeografiLink.Size = new System.Drawing.Size(57, 16);
+            this.GeografiLink.Size = new System.Drawing.Size(80, 22);
             this.GeografiLink.TabIndex = 3;
             this.GeografiLink.TabStop = true;
             this.GeografiLink.Text = "Geografi";
-            this.GeografiLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.BiologiLink_LinkClicked);
+            this.GeografiLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GeografiLink_LinkClicked);
             // 
             // HistoriaLink
             // 
             this.HistoriaLink.AutoSize = true;
-            this.HistoriaLink.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HistoriaLink.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HistoriaLink.LinkColor = System.Drawing.Color.Black;
             this.HistoriaLink.Location = new System.Drawing.Point(40, 200);
             this.HistoriaLink.Name = "HistoriaLink";
-            this.HistoriaLink.Size = new System.Drawing.Size(51, 16);
+            this.HistoriaLink.Size = new System.Drawing.Size(75, 22);
             this.HistoriaLink.TabIndex = 4;
             this.HistoriaLink.TabStop = true;
             this.HistoriaLink.Text = "Historia";
-            this.HistoriaLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.BiologiLink_LinkClicked);
+            this.HistoriaLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.HistoriaLink_LinkClicked);
             // 
             // DataLink
             // 
             this.DataLink.AutoSize = true;
-            this.DataLink.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataLink.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataLink.LinkColor = System.Drawing.Color.Black;
             this.DataLink.Location = new System.Drawing.Point(40, 250);
             this.DataLink.Name = "DataLink";
-            this.DataLink.Size = new System.Drawing.Size(82, 16);
+            this.DataLink.Size = new System.Drawing.Size(116, 22);
             this.DataLink.TabIndex = 5;
             this.DataLink.TabStop = true;
             this.DataLink.Text = "Tv/Datorspel";
-            this.DataLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.BiologiLink_LinkClicked);
+            this.DataLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.DataLink_LinkClicked);
             // 
             // TeknikLink
             // 
             this.TeknikLink.AutoSize = true;
-            this.TeknikLink.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TeknikLink.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeknikLink.LinkColor = System.Drawing.Color.Black;
             this.TeknikLink.Location = new System.Drawing.Point(40, 300);
             this.TeknikLink.Name = "TeknikLink";
-            this.TeknikLink.Size = new System.Drawing.Size(46, 16);
+            this.TeknikLink.Size = new System.Drawing.Size(63, 22);
             this.TeknikLink.TabIndex = 6;
             this.TeknikLink.TabStop = true;
             this.TeknikLink.Text = "Teknik";
-            this.TeknikLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.BiologiLink_LinkClicked);
+            this.TeknikLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.TeknikLink_LinkClicked);
             // 
             // Försätts
             // 
